@@ -1,9 +1,30 @@
-The _printf function is a custom version of the standard printf function in C programming language. It takes in a format string as the first argument, followed by a variable number of other arguments. The format string is used to specify how the other arguments should be printed.
+# _printf
+## _A custom implementation of the printf function in C._
 
-Before doing anything else, the function checks if the format string passed in is null, and if it is, it immediately returns -1. This is to handle the case where no format string is provided.
+[![ALX](https://images.squarespace-cdn.com/content/v1/5f064fad5065bf4b98603cbe/f8ed951c-c3fd-40d6-9876-14f9ecb19ecb/African%2BLeadership%2BGroup%2BLogo.png)](https://www.alxafrica.com/)
 
-The function then uses the va_list variable type to start accessing the variable number of arguments that were passed in after the format string. These arguments will be used according to the format specified in the format string.
+The _printf library is a simple implementation of the printf function in C. It is designed to provide a similar functionality to the standard printf function, with the added ability to handle custom conversion specifiers.
 
-The function then calls another function called parser, which takes in the format string, an array of structs called f_list and the va_list variable. The parser function uses the information provided to determine how to format the output string.
+##  ✨ How to use ✨
+```c
+int _printf(const char *format, ...);
+```
+In addition to the standard conversion specifiers (e.g. %c, %s, %d, etc.), the library also supports the following custom conversion specifiers:
+   - > %r: prints a string in reverse
+   - > %R: applies the ROT13 encryption to a string
+   - > %b: prints an integer in binary format
+   - > %o: prints an integer in octal format
+   - > %x: prints an integer in lowercase hexadecimal format
+   - > %X: prints an integer in uppercase hexadecimal format
 
-Once the parser function has finished running, it returns the total number of characters printed, which is stored in a variable called printed_chars. After this, the function ends the access to the variable arguments using va_end and returns the total number of characters printed. This is the final output of the _printf function.
+## Elements
+
+This file contains the following elements:
+    struct conversion_specifier: This struct contains two fields, symbol and func. symbol is a string that represents a specific conversion specifier (e.g. 'c' for character, 's' for string, etc.) and func is a pointer to a function that takes in a va_list as an argument and handles the corresponding conversion specifier. This struct is then given an alias conver_t for easier reference throughout the rest of the code.
+    _printf: This function takes in a format string as its first argument and produces output according to the format provided. It takes in a variable number of arguments and returns the number of characters printed.
+    _writechar: This function takes in a character as its argument and writes it to stdout. It returns the number of characters printed (1 for success, -1 for failure).
+    parser: This function takes in the format string, an array of conversion functions, and a variable argument list as its arguments. It parses the format string and calls the appropriate conversion function. It returns the number of characters printed.
+    ```
+    print_character, print_string, print_percent, print_integer, print_u_number, print_s_int, print_unsigned_integer, print_reversed, rot13, print_binary, print_octal, print_hex_cap, print_hex_lo
+    ```
+    : These are the conversion functions that handle the corresponding conversion specifiers.
