@@ -11,7 +11,7 @@ int _printf(const char *format, ...) {
     int printed_chars;
     /*list of functions for different format specifiers*/
     conver_t function_list[] = {
-        {"c", print_char},
+        {"c", print_character},
         {"s", print_string},
         {"%", print_percent},
         {"d", print_integer},
@@ -21,8 +21,8 @@ int _printf(const char *format, ...) {
         {"R", rot13},
         {"u", print_unsigned_integer},
         {"o", print_octal},
-        {"x", print_hex},
-        {"X", print_heX},
+        {"x", print_hex_lo},
+        {"X", print_hex_cap},
         {NULL, NULL}
     };
 

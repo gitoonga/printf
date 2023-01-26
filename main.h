@@ -31,6 +31,21 @@ int print_character(va_list arg_list);
 int print_string(va_list arg_list);
 int print_percent(__attribute__((unused))va_list arg_list);
 int print_integer(va_list arg_list);
+int print_u_number(unsigned int n);
+int print_s_int(va_list args);
 int print_unsigned_integer(va_list arg_list);
+
+int print_reversed(va_list arg);
+int _isalpha(char c);
+int rot13(va_list list);
+char *reverse_string(char *original_string);
+void write_string(char *input_string);
+unsigned int base_length(unsigned int number, int base);
+char *memory_copy(char *destination, char *source, unsigned int num_bytes);
+int print_binary(va_list list);
+int print_octal(va_list arg_list);
+int hex_check(int, char);
+int print_hex_cap(va_list list);
+int print_hex_lo(va_list arg_list);
 
 #endif

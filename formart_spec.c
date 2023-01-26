@@ -43,6 +43,38 @@ int print_percent(__attribute__((unused))va_list arg_list)
     return (1);
 }
 
+int print_s_int(va_list args)
+{
+	int n;
+	int div;
+	int len;
+	unsigned int num;
+
+	n  = va_arg(args, int);
+	div = 1;
+	len = 0;
+
+	if (n < 0)
+	{
+		len += _writechar('-');
+		num = n * -1;
+	}
+	else
+		num = n;
+
+	for (; num / div > 9; )
+		div *= 10;
+
+	for (; div != 0; )
+	{
+		len += _writechar('0' + num / div);
+		num %= div;
+		div /= 10;
+	}
+
+	return (len);
+}
+
 /**
  * print_integer - Prints an integer
  * @arg_list: list of arguments, containing the integer to be printed
@@ -51,7 +83,39 @@ int print_percent(__attribute__((unused))va_list arg_list)
  */
 int print_integer(va_list arg_list)
 {
-    return (print_number(arg_list));
+    int num_length;
+
+	num_length = print_s_int(arg_list);
+	return (num_length);
+}
+
+/**
+ * print_unsgined_number - Prints an unsigned number
+ * @n: unsigned integer to be printed
+ * Return: The amount of numbers printed
+ */
+int print_u_number(unsigned int n)
+{
+	int div;
+	int len;
+	unsigned int num;
+
+	div = 1;
+	len = 0;
+
+	num = n;
+
+	for (; num / div > 9; )
+		div *= 10;
+
+	for (; div != 0; )
+	{
+		len += _writechar('0' + num / div);
+		num %= div;
+		div /= 10;
+	}
+
+	return (len);
 }
 
 /**
@@ -67,9 +131,9 @@ int print_unsigned_integer(va_list arg_list)
     number = va_arg(arg_list, unsigned int);
 
     if (number == 0)
-        return (print_unsigned_number(number));
+        return (print_u_number(number));
 
     if (number < 1)
         return (-1);
-    return (print_unsigned_number(number));
+    return (print_u_number(number));
 }
