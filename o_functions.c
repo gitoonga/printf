@@ -16,7 +16,7 @@ char *reverse_string(char *original_string)
 	for (length = 0; original_string[length] != '\0'; length++)
 	{}
 
-	reversed_string = malloc(sizeof(char) * length + 1)
+	reversed_string = malloc(sizeof(char) * length + 1);
 	if (reversed_string == NULL)
 		return (NULL);
 
