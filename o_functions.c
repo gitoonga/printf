@@ -8,26 +8,26 @@
  */
 char *reverse_string(char *original_string)
 {
-    int length;
-    int front;
-    char temp;
-    char *reversed_string;
+	int length;
+	int front;
+	char temp;
+	char *reversed_string;
 
-    for (length = 0; original_string[length] != '\0'; length++)
-    {}
+	for (length = 0; original_string[length] != '\0'; length++)
+	{}
 
-    reversed_string = malloc(sizeof(char) * length + 1);
-    if (reversed_string == NULL)
-        return (NULL);
+	reversed_string = malloc(sizeof(char) * length + 1)
+	if (reversed_string == NULL)
+		return (NULL);
 
-    memory_copy(reversed_string, original_string, length);
-    for (front = 0; front < length; front++, length--)
-    {
-        temp = reversed_string[length - 1];
-        reversed_string[length - 1] = reversed_string[front];
-        reversed_string[front] = temp;
-    }
-    return (reversed_string);
+	memory_copy(reversed_string, original_string, length);
+	for (front = 0; front < length; front++, length--)
+	{
+		temp = reversed_string[length - 1];
+		reversed_string[length - 1] = reversed_string[front];
+		reversed_string[front] = temp;
+	}
+	return (reversed_string);
 }
 
 /**
@@ -37,16 +37,17 @@ char *reverse_string(char *original_string)
  */
 void write_string(char *input_string)
 {
-    int index;
+	int index;
 
-    for (index = 0; input_string[index] != '\0'; index++)
-    {
-        _writechar(input_string[index]);
-    }
+	for (index = 0; input_string[index] != '\0'; index++)
+	{
+		_writechar(input_string[index]);
+	}
 }
 
 /**
- * base_length - calculates the number of digits in a given number when represented in a specific base
+ * base_length - calculates the number of digits in a
+ * given number when represented in a specific base
  * @number: number to be calculated
  * @base: base of the representation
  *
@@ -54,13 +55,13 @@ void write_string(char *input_string)
  */
 unsigned int base_length(unsigned int number, int base)
 {
-    unsigned int counter;
+	unsigned int counter;
 
-    for (counter = 0; number > 0; counter++)
-    {
-        number = number / base;
-    }
-    return (counter);
+	for (counter = 0; number > 0; counter++)
+	{
+		number = number / base;
+	}
+	return (counter);
 }
 
 /**
@@ -73,15 +74,12 @@ unsigned int base_length(unsigned int number, int base)
  */
 char *memory_copy(char *destination, char *source, unsigned int num_bytes)
 {
-    unsigned int index;
+	unsigned int index;
 
-    for (index = 0; index < num_bytes; index++)
-    {
-        destination[index] = source[index];
-    }
-    destination[index] = '\0';
-    return (destination);
+	for (index = 0; index < num_bytes; index++)
+	{
+		destination[index] = source[index];
+	}
+	destination[index] = '\0';
+	return (destination);
 }
-
-
-

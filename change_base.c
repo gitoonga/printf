@@ -20,7 +20,7 @@ int print_binary(va_list list)
 	if (number < 1)
 		return (-1);
 	length = base_length(number, 2);
-	binary_str = malloc(sizeof(char) *length + 1);
+	binary_str = malloc(sizeof(char) * length + 1);
 	if (binary_str == NULL)
 		return (-1);
 
@@ -45,7 +45,7 @@ int print_binary(va_list list)
 
 /**
  *print_octal - converts and prints an unsigned int as an octal number
- *@list: va_list containing the unsigned int to convert and print
+ *@arg_list: va_list containing the unsigned int to convert and print
  *Return: length of the octal string
  */
 
@@ -65,7 +65,7 @@ int print_octal(va_list arg_list)
 	/*get the length of the octal representation */
 	length = base_length(input_num, 8);
 	/*allocate memory for octal representation */
-	octal_representation = malloc(sizeof(char) *length + 1);
+	octal_representation = malloc(sizeof(char) * length + 1);
 	if (octal_representation == NULL)
 		return (-1);
 	/*convert input to octal representation */
@@ -89,3 +89,4 @@ int print_octal(va_list arg_list)
 	/*Return the length of the octal representation*/
 	return (length);
 }
+
