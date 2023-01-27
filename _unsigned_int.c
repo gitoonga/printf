@@ -2,6 +2,7 @@
 
 /**
   * print_s_int - prints an unsigned integer
+  * @args: variadic function arguments
   *
   * Return: value of the return type of the integer
   */
