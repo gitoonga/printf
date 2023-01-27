@@ -5,6 +5,13 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+int print_s_int(va_list args);
+/**
+  * print_s_int -
+  *
+  * Return:
+  */
+
 /**
  * struct conversion_specifier - contains two fields: symbol, a string that represents a specific conversion specifier 
  * and func a pointer to a function that takes in a va_list as an 
